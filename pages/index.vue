@@ -208,6 +208,7 @@
       </div>
     </div>
   </div>
+  <About/>
 </template>
 
 <script setup>

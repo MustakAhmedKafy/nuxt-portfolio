@@ -1,6 +1,6 @@
 <template>
   <section
-    class="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20 px-4 overflow-hidden transition-colors duration-500">
+    class="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900 py-20 px-4 overflow-hidden transition-colors duration-500">
     <div class="max-w-7xl mx-auto">
       <!-- Main Content Grid -->
       <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -9,61 +9,39 @@
         <div class="space-y-8 lg:pr-8">
           <!-- Animated Badge -->
           <div ref="badge"
-            class="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-200 dark:border-orange-700 shadow-sm">
+            class="inline-flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm px-4 py-2 rounded-full border border-purple-200 dark:border-purple-700 shadow-sm">
             <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Available for new projects</span>
-          </div>
-
-          <!-- Main Heading -->
-          <div class="space-y-4">
-            <h1 ref="heading" class="text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
-              Hi, I'm
-              <span class="text-transparent bg-gradient-to-r from-orange-600 via-amber-500 to-orange-700 bg-clip-text">
-                Alex
-              </span>
-            </h1>
-            <p ref="subheading" class="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-medium">
-              Crafting Interactive Web Experiences
-            </p>
+            <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Available for new projects</span>
           </div>
 
           <!-- Description -->
           <div ref="description" class="space-y-4">
-            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
               I'm a passionate front-end developer with 5+ years of experience creating beautiful,
               responsive web applications. I specialize in Vue.js, React, and modern CSS frameworks,
               turning complex ideas into intuitive user experiences.
             </p>
-            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
               When I'm not coding, you'll find me exploring new design trends, contributing to open-source
               projects, or experimenting with the latest web technologies.
             </p>
           </div>
 
-          <!-- Skills Tags -->
-          <div ref="skills" class="flex flex-wrap gap-3">
-            <span v-for="skill in skillsData" :key="skill.name"
-              class="skill-tag px-4 py-2 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-full border border-orange-200 dark:border-orange-700 text-gray-700 dark:text-gray-300 font-medium hover:bg-orange-100 dark:hover:bg-orange-900/30 hover:border-orange-300 dark:hover:border-orange-600 transition-all duration-300 cursor-default">
-              <Icon :icon="skill.icon" class="w-4 h-4 inline mr-2" />
-              {{ skill.name }}
-            </span>
-          </div>
-
           <!-- CTA Buttons -->
           <div ref="buttons" class="flex flex-col sm:flex-row gap-4 pt-4">
             <button
-              class="cta-primary group relative overflow-hidden bg-gradient-to-r from-orange-600 to-amber-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              class="cta-primary group relative overflow-hidden bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               <span class="relative z-10 flex items-center justify-center gap-2">
                 <Icon icon="mdi:rocket-launch" class="w-5 h-5" />
                 Let's Work Together
               </span>
               <div
-                class="absolute inset-0 bg-gradient-to-r from-orange-700 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                class="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               </div>
             </button>
 
             <button
-              class="cta-secondary group border-2 border-orange-600 text-orange-600 dark:text-orange-400 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-orange-600 hover:text-white dark:hover:bg-orange-600 dark:hover:text-white transition-all duration-300 transform hover:-translate-y-1">
+              class="cta-secondary group border-2 border-purple-600 text-purple-600 dark:text-purple-400 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-600 hover:text-white dark:hover:bg-purple-600 dark:hover:text-white transition-all duration-300 transform hover:-translate-y-1">
               <span class="flex items-center justify-center gap-2">
                 <Icon icon="mdi:download" class="w-5 h-5" />
                 Download CV
@@ -74,7 +52,7 @@
           <!-- Social Links -->
           <div ref="social" class="flex gap-4 pt-4">
             <a v-for="social in socialLinks" :key="social.name" :href="social.url"
-              class="social-link w-12 h-12 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl border border-orange-200 dark:border-orange-700 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-900/30 hover:border-orange-300 dark:hover:border-orange-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+              class="social-link w-12 h-12 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm rounded-xl border border-purple-200 dark:border-purple-700 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
               <Icon :icon="social.icon" class="w-6 h-6" />
             </a>
           </div>
@@ -82,11 +60,9 @@
 
         <!-- Right Side - Extraordinary Visual Elements -->
         <div class="relative lg:pl-8">
-          <!-- <CHANGE> Removed image container and stats, added extraordinary floating elements -->
-
           <!-- Floating Code Terminal -->
           <div ref="codeTerminal"
-            class="relative bg-gray-900 dark:bg-black rounded-2xl p-6 shadow-2xl border border-gray-700 dark:border-gray-600 backdrop-blur-sm">
+            class="relative bg-slate-900 dark:bg-black rounded-2xl p-6 shadow-2xl border border-slate-700 dark:border-slate-600 backdrop-blur-sm">
             <!-- Terminal Header -->
             <div class="flex items-center justify-between mb-4">
               <div class="flex items-center gap-2">
@@ -94,7 +70,7 @@
                 <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
                 <div class="w-3 h-3 bg-green-500 rounded-full"></div>
               </div>
-              <div class="text-gray-400 text-xs font-mono">~/portfolio</div>
+              <div class="text-slate-400 text-xs font-mono">~/portfolio</div>
             </div>
 
             <!-- Terminal Content -->
@@ -122,13 +98,13 @@
           <div ref="floatingElements" class="absolute inset-0 pointer-events-none">
             <!-- Animated Circles -->
             <div
-              class="floating-circle absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-orange-400/20 to-amber-500/20 rounded-full blur-sm">
+              class="floating-circle absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-purple-400/20 to-indigo-500/20 rounded-full blur-sm">
             </div>
             <div
-              class="floating-circle-2 absolute bottom-20 left-5 w-16 h-16 bg-gradient-to-br from-amber-400/30 to-orange-500/30 rounded-full blur-sm">
+              class="floating-circle-2 absolute bottom-20 left-5 w-16 h-16 bg-gradient-to-br from-indigo-400/30 to-purple-500/30 rounded-full blur-sm">
             </div>
             <div
-              class="floating-circle-3 absolute top-1/2 -right-5 w-12 h-12 bg-gradient-to-br from-orange-500/25 to-amber-600/25 rounded-full blur-sm">
+              class="floating-circle-3 absolute top-1/2 -right-5 w-12 h-12 bg-gradient-to-br from-purple-500/25 to-indigo-600/25 rounded-full blur-sm">
             </div>
 
             <!-- Animated Lines -->
@@ -137,9 +113,9 @@
                 fill="none" opacity="0.3" />
               <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
-                  <stop offset="50%" style="stop-color:#f59e0b;stop-opacity:1" />
-                  <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+                  <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#6366f1;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
                 </linearGradient>
               </defs>
             </svg>
@@ -147,13 +123,13 @@
 
           <!-- Floating Tech Icons -->
           <div ref="techIcons" class="absolute inset-0 pointer-events-none">
-            <div class="tech-icon absolute top-16 left-8 w-8 h-8 text-orange-500 opacity-60">
+            <div class="tech-icon absolute top-16 left-8 w-8 h-8 text-purple-500 opacity-60">
               <Icon icon="logos:vue" class="w-full h-full" />
             </div>
-            <div class="tech-icon-2 absolute bottom-32 right-12 w-8 h-8 text-orange-500 opacity-60">
+            <div class="tech-icon-2 absolute bottom-32 right-12 w-8 h-8 text-purple-500 opacity-60">
               <Icon icon="logos:react" class="w-full h-full" />
             </div>
-            <div class="tech-icon-3 absolute top-1/3 -left-4 w-8 h-8 text-orange-500 opacity-60">
+            <div class="tech-icon-3 absolute top-1/3 -left-4 w-8 h-8 text-purple-500 opacity-60">
               <Icon icon="simple-icons:greensock" class="w-full h-full" />
             </div>
           </div>
@@ -173,10 +149,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 // Template refs
 const badge = ref(null)
-const heading = ref(null)
-const subheading = ref(null)
 const description = ref(null)
-const skills = ref(null)
 const buttons = ref(null)
 const social = ref(null)
 const codeTerminal = ref(null)
@@ -194,16 +167,6 @@ const codeLine6 = ref(null)
 const codeLine7 = ref(null)
 const codeLine8 = ref(null)
 
-// Data
-const skillsData = [
-  { name: 'Vue.js', icon: 'logos:vue' },
-  { name: 'React', icon: 'logos:react' },
-  { name: 'TypeScript', icon: 'logos:typescript-icon' },
-  { name: 'Tailwind', icon: 'logos:tailwindcss-icon' },
-  { name: 'Node.js', icon: 'logos:nodejs-icon' },
-  { name: 'GSAP', icon: 'simple-icons:greensock' }
-]
-
 const socialLinks = [
   { name: 'GitHub', icon: 'mdi:github', url: '#' },
   { name: 'LinkedIn', icon: 'mdi:linkedin', url: '#' },
@@ -212,8 +175,6 @@ const socialLinks = [
 ]
 
 onMounted(() => {
-  // <CHANGE> Completely rewritten animations for better performance and smoother effects
-
   // Create main timeline with improved easing
   const tl = gsap.timeline()
 
@@ -224,31 +185,12 @@ onMounted(() => {
     opacity: 0,
     ease: "elastic.out(1, 0.5)"
   })
-    .from(heading.value, {
-      duration: 1.2,
-      y: 80,
-      opacity: 0,
-      ease: "power4.out"
-    }, "-=0.7")
-    .from(subheading.value, {
-      duration: 1,
-      y: 40,
-      opacity: 0,
-      ease: "power3.out"
-    }, "-=0.8")
     .from(description.value, {
       duration: 1,
       y: 40,
       opacity: 0,
       ease: "power3.out"
     }, "-=0.7")
-    .from(skills.value.children, {
-      duration: 0.8,
-      y: 30,
-      opacity: 0,
-      stagger: 0.08,
-      ease: "elastic.out(1, 0.6)"
-    }, "-=0.5")
     .from(buttons.value.children, {
       duration: 1,
       y: 40,
@@ -399,27 +341,7 @@ onMounted(() => {
     })
   }
 
-  // Enhanced hover animations
-  const skillTags = document.querySelectorAll('.skill-tag')
-  skillTags.forEach(tag => {
-    tag.addEventListener('mouseenter', () => {
-      gsap.to(tag, {
-        duration: 0.4,
-        scale: 1.08,
-        y: -3,
-        ease: "elastic.out(1, 0.5)"
-      })
-    })
-    tag.addEventListener('mouseleave', () => {
-      gsap.to(tag, {
-        duration: 0.4,
-        scale: 1,
-        y: 0,
-        ease: "power2.out"
-      })
-    })
-  })
-
+  // Social links hover animations
   const socialLinksElements = document.querySelectorAll('.social-link')
   socialLinksElements.forEach(link => {
     link.addEventListener('mouseenter', () => {
@@ -445,8 +367,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* <CHANGE> Added dark mode support and enhanced animations */
-
 /* Dark mode transitions */
 * {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
@@ -543,18 +463,18 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d97706;
+  background: #9333ea;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b45309;
+  background: #7c3aed;
 }
 
 /* Dark mode scrollbar */
 @media (prefers-color-scheme: dark) {
   ::-webkit-scrollbar-track {
-    background: #1f2937;
+    background: #1e293b;
   }
 }
 
@@ -565,7 +485,7 @@ html {
   }
 
   .dark .backdrop-blur-sm {
-    background-color: rgba(31, 41, 55, 0.9);
+    background-color: rgba(30, 41, 59, 0.9);
   }
 }
 

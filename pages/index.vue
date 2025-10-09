@@ -203,6 +203,7 @@
     </div>
   </div>
   <About/>
+  <Skills/>
 </template>
 
 <script setup>

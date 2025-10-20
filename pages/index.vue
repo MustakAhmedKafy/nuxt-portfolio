@@ -202,8 +202,9 @@
       </div>
     </div>
   </div>
-  <About/>
-  <Skills/>
+  <About />
+  <Skills />
+  <Solutions />
 </template>
 
 <script setup>

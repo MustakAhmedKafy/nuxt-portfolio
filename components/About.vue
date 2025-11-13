@@ -75,21 +75,32 @@
 
             <!-- Terminal Content -->
             <div class="font-mono text-sm space-y-2">
-              <div ref="codeLine1" class="flex items-center gap-2">
+              <div ref="codeLine1" class="flex items-center gap-2 opacity-0">
                 <span class="text-green-400">$</span>
-                <span class="text-white typewriter">const developer = {</span>
+                <span class="text-white code-text">const developer = {</span>
               </div>
-              <div ref="codeLine2" class="ml-4 text-blue-400 typewriter-delay-1">name: "Alex",</div>
-              <div ref="codeLine3" class="ml-4 text-purple-400 typewriter-delay-2">skills: ["Vue", "React", "GSAP"],
+              <div ref="codeLine2" class="ml-4 text-blue-400 opacity-0">
+                <span class="code-text">name: "Alex",</span>
               </div>
-              <div ref="codeLine4" class="ml-4 text-yellow-400 typewriter-delay-3">passion: "creating magic",</div>
-              <div ref="codeLine5" class="ml-4 text-pink-400 typewriter-delay-4">coffee: Infinity,</div>
-              <div ref="codeLine6" class="ml-4 text-cyan-400 typewriter-delay-5">status: "available"</div>
-              <div ref="codeLine7" class="text-white typewriter-delay-6">}</div>
-              <div ref="codeLine8" class="flex items-center gap-2 mt-4">
+              <div ref="codeLine3" class="ml-4 text-purple-400 opacity-0">
+                <span class="code-text">skills: ["Vue", "React", "GSAP"],</span>
+              </div>
+              <div ref="codeLine4" class="ml-4 text-yellow-400 opacity-0">
+                <span class="code-text">passion: "creating magic",</span>
+              </div>
+              <div ref="codeLine5" class="ml-4 text-pink-400 opacity-0">
+                <span class="code-text">coffee: Infinity,</span>
+              </div>
+              <div ref="codeLine6" class="ml-4 text-cyan-400 opacity-0">
+                <span class="code-text">status: "available"</span>
+              </div>
+              <div ref="codeLine7" class="text-white opacity-0">
+                <span class="code-text">}</span>
+              </div>
+              <div ref="codeLine8" class="flex items-center gap-2 mt-4 opacity-0">
                 <span class="text-green-400">$</span>
-                <span class="text-white typewriter-delay-7">npm run create-awesome</span>
-                <div class="w-2 h-4 bg-white animate-pulse ml-1"></div>
+                <span class="text-white code-text">npm run create-awesome</span>
+                <div ref="cursor" class="w-2 h-4 bg-white opacity-0"></div>
               </div>
             </div>
           </div>
@@ -156,6 +167,7 @@ const codeTerminal = ref(null)
 const floatingElements = ref(null)
 const techIcons = ref(null)
 const animatedPath = ref(null)
+const cursor = ref(null)
 
 // Code lines refs
 const codeLine1 = ref(null)
@@ -178,7 +190,7 @@ onMounted(() => {
   // Create main timeline with improved easing
   const tl = gsap.timeline()
 
-  // Enhanced entrance animations
+  // Enhanced entrance animations for left side
   tl.from(badge.value, {
     duration: 1,
     y: 50,
@@ -206,37 +218,80 @@ onMounted(() => {
       ease: "elastic.out(1, 0.6)"
     }, "-=0.3")
 
-  // Enhanced code terminal animation
+  // SMOOTH CODE TERMINAL ANIMATION
+  // Step 1: Animate terminal container in first
   gsap.from(codeTerminal.value, {
-    duration: 1.5,
-    x: 150,
-    y: -50,
+    duration: 1.2,
+    x: 100,
+    y: -30,
     opacity: 0,
-    rotation: 5,
-    ease: "power4.out",
-    delay: 0.5
+    scale: 0.95,
+    ease: "power3.out",
+    delay: 0.3
   })
 
-  // Typewriter effect for code lines
-  const codeLines = [codeLine1, codeLine2, codeLine3, codeLine4, codeLine5, codeLine6, codeLine7, codeLine8]
-  codeLines.forEach((line, index) => {
-    gsap.from(line.value, {
-      duration: 0.8,
-      opacity: 0,
-      x: -20,
-      ease: "power2.out",
-      delay: 1.2 + (index * 0.3)
-    })
+  // Step 2: Create a timeline for code lines that starts AFTER terminal is visible
+  const codeTimeline = gsap.timeline({ delay: 1.5 }) // Start after terminal animation
+
+  // Animate each code line with typewriter effect
+  const codeLines = [
+    { ref: codeLine1, delay: 0 },
+    { ref: codeLine2, delay: 0.2 },
+    { ref: codeLine3, delay: 0.4 },
+    { ref: codeLine4, delay: 0.6 },
+    { ref: codeLine5, delay: 0.8 },
+    { ref: codeLine6, delay: 1.0 },
+    { ref: codeLine7, delay: 1.2 },
+    { ref: codeLine8, delay: 1.4 }
+  ]
+
+  codeLines.forEach(({ ref: lineRef, delay }) => {
+    codeTimeline.to(lineRef.value, {
+      duration: 0.5,
+      opacity: 1,
+      ease: "power2.out"
+    }, delay)
+
+    // Add typewriter effect to the text inside
+    const textElement = lineRef.value.querySelector('.code-text')
+    if (textElement) {
+      codeTimeline.fromTo(textElement,
+        { width: 0 },
+        {
+          width: "100%",
+          duration: 0.6,
+          ease: "none"
+        },
+        delay
+      )
+    }
   })
 
-  // Floating elements animations
+  // Animate cursor at the end
+  codeTimeline.to(cursor.value, {
+    opacity: 1,
+    duration: 0.3,
+    ease: "power2.out"
+  }, "+=0.2")
+
+  // Make cursor blink continuously
+  gsap.to(cursor.value, {
+    opacity: 0,
+    duration: 0.5,
+    repeat: -1,
+    yoyo: true,
+    ease: "power1.inOut",
+    delay: 3.5
+  })
+
+  // Floating elements - animate in AFTER terminal is visible
   gsap.from(floatingElements.value.children, {
     duration: 1,
     scale: 0,
     opacity: 0,
     stagger: 0.2,
     ease: "elastic.out(1, 0.5)",
-    delay: 1.5
+    delay: 2
   })
 
   gsap.from(techIcons.value.children, {
@@ -246,7 +301,7 @@ onMounted(() => {
     rotation: 180,
     stagger: 0.3,
     ease: "elastic.out(1, 0.6)",
-    delay: 2
+    delay: 2.3
   })
 
   // Continuous floating animations
@@ -312,15 +367,15 @@ onMounted(() => {
     delay: 2
   })
 
-  // Code terminal floating
+  // Code terminal gentle floating (starts after all animations)
   gsap.to(codeTerminal.value, {
     duration: 6,
-    y: -20,
-    rotation: 1,
+    y: -15,
+    rotation: 0.5,
     repeat: -1,
     yoyo: true,
     ease: "sine.inOut",
-    delay: 2
+    delay: 4
   })
 
   // Animated SVG path
@@ -335,7 +390,7 @@ onMounted(() => {
       duration: 3,
       strokeDashoffset: 0,
       ease: "power2.inOut",
-      delay: 2,
+      delay: 2.5,
       repeat: -1,
       yoyo: true
     })
@@ -372,62 +427,12 @@ onMounted(() => {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-/* Enhanced typewriter effect */
-.typewriter {
+/* Typewriter effect for code text */
+.code-text {
+  display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  animation: typewriter 2s steps(20) forwards;
-}
-
-.typewriter-delay-1 {
-  animation: typewriter 1.5s steps(15) 0.5s forwards;
-  opacity: 0;
-}
-
-.typewriter-delay-2 {
-  animation: typewriter 1.8s steps(25) 1s forwards;
-  opacity: 0;
-}
-
-.typewriter-delay-3 {
-  animation: typewriter 1.6s steps(20) 1.5s forwards;
-  opacity: 0;
-}
-
-.typewriter-delay-4 {
-  animation: typewriter 1.4s steps(18) 2s forwards;
-  opacity: 0;
-}
-
-.typewriter-delay-5 {
-  animation: typewriter 1.7s steps(22) 2.5s forwards;
-  opacity: 0;
-}
-
-.typewriter-delay-6 {
-  animation: typewriter 1.2s steps(10) 3s forwards;
-  opacity: 0;
-}
-
-.typewriter-delay-7 {
-  animation: typewriter 2s steps(25) 3.5s forwards;
-  opacity: 0;
-}
-
-@keyframes typewriter {
-  from {
-    width: 0;
-    opacity: 0;
-  }
-
-  1% {
-    opacity: 1;
-  }
-
-  to {
-    width: 100%;
-    opacity: 1;
-  }
+  vertical-align: top;
 }
 
 /* Enhanced gradient animation */

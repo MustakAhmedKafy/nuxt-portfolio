@@ -205,6 +205,7 @@
   <About />
   <Skills />
   <Solutions />
+  <ProfessionalBackground />
 </template>
 
 <script setup>

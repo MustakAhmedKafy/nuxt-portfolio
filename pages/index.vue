@@ -206,6 +206,8 @@
   <Skills />
   <Solutions />
   <ProfessionalBackground />
+  <Project />
+  <Gallery />
 </template>
 
 <script setup>

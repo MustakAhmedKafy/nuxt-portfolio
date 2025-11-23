@@ -208,6 +208,7 @@
   <ProfessionalBackground />
   <Project />
   <Gallery />
+  <Contact/>
 </template>
 
 <script setup>

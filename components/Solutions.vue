@@ -1,6 +1,6 @@
 <template>
-  <section
-    class="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50/30 to-slate-100 dark:from-slate-950 dark:via-purple-950/20 dark:to-slate-900 py-20 px-6 relative overflow-hidden">
+  <section id="services"
+    class="bg-gradient-to-br from-slate-50 via-indigo-50/30 to-slate-100 dark:from-slate-950 dark:via-indigo-950/20 dark:to-slate-900 py-20 md:py-24 lg:py-28 px-4 sm:px-6 relative overflow-hidden">
 
     <!-- Animated Background Elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">

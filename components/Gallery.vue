@@ -1,11 +1,11 @@
 <template>
-  <section
-    class="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50 dark:from-gray-900 dark:to-purple-950 transition-colors duration-500 py-20 px-4">
+  <section id="gallery"
+    class="bg-gradient-to-br from-gray-50 to-indigo-50 dark:from-gray-900 dark:to-indigo-950 transition-colors duration-500 py-20 md:py-24 lg:py-28 px-4">
     <div class="max-w-7xl mx-auto">
       <!-- Header Section -->
-      <div class="text-center mb-16 space-y-4">
+      <div class="text-center mb-12 sm:mb-16 space-y-4">
         <h2
-          class="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-400 dark:from-purple-400 dark:to-purple-300 animate-fade-in">
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-500 dark:from-indigo-400 dark:to-purple-400 animate-fade-in">
           My Work
         </h2>
         <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
@@ -18,8 +18,8 @@
         <button v-for="category in categories" :key="category" @click="activeCategory = category" :class="[
           'px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105',
           activeCategory === category
-            ? 'bg-purple-500 text-white shadow-lg shadow-purple-500/50 dark:shadow-purple-500/30'
-            : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-gray-700'
+            ? 'bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg shadow-indigo-500/50 dark:shadow-indigo-500/30'
+            : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-indigo-100 dark:hover:bg-gray-700'
         ]">
           {{ category }}
         </button>
@@ -40,12 +40,12 @@
               class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
               <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                 <h3 class="text-white text-xl font-bold mb-2">{{ image.title }}</h3>
-                <p class="text-purple-300 text-sm">{{ image.category }}</p>
+                <p class="text-indigo-300 text-sm">{{ image.category }}</p>
               </div>
 
               <!-- View Icon -->
               <div
-                class="absolute top-4 right-4 bg-purple-500 rounded-full p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300">
+                class="absolute top-4 right-4 bg-indigo-500 rounded-full p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
@@ -62,7 +62,7 @@
           class="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
           <!-- Close Button -->
           <button @click="closeLightbox"
-            class="absolute top-6 right-6 bg-purple-500 hover:bg-purple-600 text-white rounded-full p-3 transition-all duration-300 transform hover:scale-110 z-10">
+            class="absolute top-6 right-6 bg-indigo-500 hover:bg-indigo-600 text-white rounded-full p-3 transition-all duration-300 transform hover:scale-110 z-10">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -70,14 +70,14 @@
 
           <!-- Navigation -->
           <button @click.stop="prevImage"
-            class="absolute left-6 bg-purple-500/80 hover:bg-purple-500 text-white rounded-full p-4 transition-all duration-300 transform hover:scale-110">
+            class="absolute left-6 bg-indigo-500/80 hover:bg-indigo-500 text-white rounded-full p-4 transition-all duration-300 transform hover:scale-110">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
 
           <button @click.stop="nextImage"
-            class="absolute right-6 bg-purple-500/80 hover:bg-purple-500 text-white rounded-full p-4 transition-all duration-300 transform hover:scale-110">
+            class="absolute right-6 bg-indigo-500/80 hover:bg-indigo-500 text-white rounded-full p-4 transition-all duration-300 transform hover:scale-110">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
@@ -93,7 +93,7 @@
               <h3 class="text-white text-2xl font-bold mb-2">
                 {{ filteredImages[currentImageIndex]?.title }}
               </h3>
-              <p class="text-purple-300">
+              <p class="text-indigo-300">
                 {{ filteredImages[currentImageIndex]?.category }}
               </p>
               <p class="text-gray-400 mt-2">

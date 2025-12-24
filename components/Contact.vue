@@ -56,16 +56,16 @@ const socialLinks = [
 </script>
 
 <template>
-  <section
-    class="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-violet-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-violet-950/20 overflow-hidden">
+  <section id="contact"
+    class="relative bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950/20 overflow-hidden">
     <!-- Animated Background -->
     <div class="absolute inset-0 pointer-events-none">
       <!-- Gradient Orbs -->
       <div
-        class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-violet-400/20 dark:bg-violet-600/20 rounded-full blur-[120px] animate-pulse-slow">
+        class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-indigo-400/20 dark:bg-indigo-600/20 rounded-full blur-[120px] animate-pulse-slow">
       </div>
       <div
-        class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-fuchsia-400/15 dark:bg-fuchsia-600/15 rounded-full blur-[100px] animate-pulse-slower">
+        class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-400/15 dark:bg-purple-600/15 rounded-full blur-[100px] animate-pulse-slower">
       </div>
       <div
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-300/10 dark:bg-indigo-600/10 rounded-full blur-[140px]">
@@ -73,34 +73,34 @@ const socialLinks = [
 
       <!-- Grid Pattern -->
       <div
-        class="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.05)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(139,92,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:60px_60px]">
+        class="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.05)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:60px_60px]">
       </div>
 
       <!-- Floating Particles -->
       <div
-        class="absolute top-20 left-[10%] w-2 h-2 bg-violet-500/50 dark:bg-violet-400/60 rounded-full animate-float-1">
+        class="absolute top-20 left-[10%] w-2 h-2 bg-indigo-500/50 dark:bg-indigo-400/60 rounded-full animate-float-1">
       </div>
       <div
-        class="absolute top-40 right-[15%] w-1.5 h-1.5 bg-fuchsia-500/40 dark:bg-fuchsia-400/50 rounded-full animate-float-2">
+        class="absolute top-40 right-[15%] w-1.5 h-1.5 bg-purple-500/40 dark:bg-purple-400/50 rounded-full animate-float-2">
       </div>
       <div
         class="absolute bottom-32 left-[20%] w-1 h-1 bg-indigo-500/60 dark:bg-indigo-400/70 rounded-full animate-float-3">
       </div>
       <div
-        class="absolute top-1/3 right-[25%] w-2.5 h-2.5 bg-violet-400/30 dark:bg-violet-300/40 rounded-full animate-float-1">
+        class="absolute top-1/3 right-[25%] w-2.5 h-2.5 bg-indigo-400/30 dark:bg-indigo-300/40 rounded-full animate-float-1">
       </div>
       <div
-        class="absolute bottom-1/4 right-[10%] w-1.5 h-1.5 bg-pink-500/40 dark:bg-pink-400/50 rounded-full animate-float-2">
+        class="absolute bottom-1/4 right-[10%] w-1.5 h-1.5 bg-purple-500/40 dark:bg-purple-400/50 rounded-full animate-float-2">
       </div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 lg:py-28">
       <!-- Header Section -->
-      <div class="text-center mb-12 sm:mb-16 lg:mb-20">
+      <div class="text-center mb-12 sm:mb-16">
         <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-100 dark:bg-violet-500/10 border border-violet-200 dark:border-violet-500/20 mb-6 backdrop-blur-sm">
-          <span class="w-2 h-2 bg-violet-500 dark:bg-violet-400 rounded-full animate-pulse"></span>
-          <span class="text-violet-600 dark:text-violet-300 text-sm font-medium tracking-wide">Available for
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 mb-6 backdrop-blur-sm">
+          <span class="w-2 h-2 bg-indigo-500 dark:bg-indigo-400 rounded-full animate-pulse"></span>
+          <span class="text-indigo-600 dark:text-indigo-300 text-sm font-medium tracking-wide">Available for
             Projects</span>
         </div>
 
@@ -108,7 +108,7 @@ const socialLinks = [
           <span class="text-slate-800 dark:text-white">Let's Create</span>
           <br>
           <span
-            class="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 dark:from-violet-400 dark:via-fuchsia-400 dark:to-pink-400 bg-clip-text text-transparent">
+            class="bg-gradient-to-r from-indigo-600 via-purple-500 to-purple-600 dark:from-indigo-400 dark:via-purple-400 dark:to-purple-500 bg-clip-text text-transparent">
             Something Amazing
           </span>
         </h1>
@@ -126,16 +126,16 @@ const socialLinks = [
           <!-- Contact Cards -->
           <div class="space-y-4">
             <a v-for="(info, index) in contactInfo" :key="index" :href="info.href"
-              class="group block p-5 sm:p-6 rounded-2xl bg-white/70 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05] backdrop-blur-sm hover:bg-white dark:hover:bg-white/[0.06] hover:border-violet-300 dark:hover:border-violet-500/30 hover:shadow-lg hover:shadow-violet-500/10 transition-all duration-300">
+              class="group block p-5 sm:p-6 rounded-2xl bg-white/70 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05] backdrop-blur-sm hover:bg-white dark:hover:bg-white/[0.06] hover:border-indigo-300 dark:hover:border-indigo-500/30 hover:shadow-lg hover:shadow-indigo-500/10 transition-all duration-300">
               <div class="flex items-start gap-4">
                 <div
-                  class="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-violet-100 to-fuchsia-100 dark:from-violet-500/20 dark:to-fuchsia-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Icon :icon="info.icon" class="w-6 h-6 text-violet-600 dark:text-violet-400" />
+                  class="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-500/20 dark:to-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Icon :icon="info.icon" class="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                 </div>
                 <div>
                   <p class="text-slate-500 dark:text-slate-500 text-sm mb-1">{{ info.label }}</p>
                   <p
-                    class="text-slate-800 dark:text-white font-medium group-hover:text-violet-600 dark:group-hover:text-violet-300 transition-colors">
+                    class="text-slate-800 dark:text-white font-medium group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">
                     {{ info.value }}</p>
                 </div>
               </div>
@@ -147,7 +147,7 @@ const socialLinks = [
             <p class="text-slate-500 dark:text-slate-500 text-sm mb-4">Follow Us</p>
             <div class="flex gap-3">
               <a v-for="social in socialLinks" :key="social.label" :href="social.href" :aria-label="social.label"
-                class="w-11 h-11 rounded-xl bg-white/80 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05] flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 hover:bg-violet-50 dark:hover:bg-violet-500/10 hover:border-violet-300 dark:hover:border-violet-500/30 transition-all duration-300">
+                class="w-11 h-11 rounded-xl bg-white/80 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05] flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 hover:border-indigo-300 dark:hover:border-indigo-500/30 transition-all duration-300">
                 <Icon :icon="social.icon" class="w-5 h-5" />
               </a>
             </div>
@@ -155,12 +155,12 @@ const socialLinks = [
 
           <!-- Decorative Quote -->
           <div
-            class="hidden lg:block p-6 rounded-2xl bg-gradient-to-br from-violet-100/80 to-fuchsia-100/50 dark:from-violet-500/10 dark:to-fuchsia-500/5 border border-violet-200/50 dark:border-violet-500/10">
-            <Icon icon="ph:quotes-fill" class="w-8 h-8 text-violet-400/60 dark:text-violet-500/50 mb-3" />
+            class="hidden lg:block p-6 rounded-2xl bg-gradient-to-br from-indigo-100/80 to-purple-100/50 dark:from-indigo-500/10 dark:to-purple-500/5 border border-indigo-200/50 dark:border-indigo-500/10">
+            <Icon icon="ph:quotes-fill" class="w-8 h-8 text-indigo-400/60 dark:text-indigo-500/50 mb-3" />
             <p class="text-slate-700 dark:text-slate-300 italic leading-relaxed">
               "Great design is not just what it looks like, but how it works and feels."
             </p>
-            <p class="text-violet-600 dark:text-violet-400 text-sm mt-3 font-medium">— Our Philosophy</p>
+            <p class="text-indigo-600 dark:text-indigo-400 text-sm mt-3 font-medium">— Our Philosophy</p>
           </div>
         </div>
 
@@ -169,26 +169,26 @@ const socialLinks = [
           <div class="relative">
             <!-- Glow Effect Behind Card -->
             <div
-              class="absolute -inset-1 bg-gradient-to-r from-violet-400/30 via-fuchsia-400/30 to-pink-400/30 dark:from-violet-600/20 dark:via-fuchsia-600/20 dark:to-pink-600/20 rounded-3xl blur-xl opacity-60 dark:opacity-50">
+              class="absolute -inset-1 bg-gradient-to-r from-indigo-400/30 via-purple-400/30 to-purple-500/30 dark:from-indigo-600/20 dark:via-purple-600/20 dark:to-purple-700/20 rounded-3xl blur-xl opacity-60 dark:opacity-50">
             </div>
 
             <!-- Form Card -->
             <div
-              class="relative bg-white/90 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-slate-200 dark:border-white/[0.08] p-6 sm:p-8 lg:p-10 shadow-xl shadow-violet-500/5 dark:shadow-none">
+              class="relative bg-white/90 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-slate-200 dark:border-white/[0.08] p-6 sm:p-8 lg:p-10 shadow-xl shadow-indigo-500/5 dark:shadow-none">
               <form @submit.prevent="handleSubmit" class="space-y-6">
                 <!-- Name & Email Row -->
                 <div class="grid sm:grid-cols-2 gap-6">
                   <!-- Full Name -->
                   <div class="group">
                     <label for="fullName"
-                      class="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2 group-focus-within:text-violet-600 dark:group-focus-within:text-violet-400 transition-colors">
+                      class="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2 group-focus-within:text-indigo-600 dark:group-focus-within:text-indigo-400 transition-colors">
                       Full Name
                     </label>
                     <div class="relative">
                       <Icon icon="ph:user-duotone"
-                        class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 dark:text-slate-500 group-focus-within:text-violet-500 dark:group-focus-within:text-violet-400 transition-colors" />
+                        class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 dark:text-slate-500 group-focus-within:text-indigo-500 dark:group-focus-within:text-indigo-400 transition-colors" />
                       <input v-model="form.fullName" type="text" id="fullName" placeholder="John Doe"
-                        class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] rounded-xl text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-violet-400 dark:focus:border-violet-500/50 focus:bg-white dark:focus:bg-violet-500/5 focus:ring-2 focus:ring-violet-500/20 transition-all duration-300"
+                        class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] rounded-xl text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-400 dark:focus:border-indigo-500/50 focus:bg-white dark:focus:bg-indigo-500/5 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300"
                         required />
                     </div>
                   </div>
@@ -196,14 +196,14 @@ const socialLinks = [
                   <!-- Email -->
                   <div class="group">
                     <label for="email"
-                      class="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2 group-focus-within:text-violet-600 dark:group-focus-within:text-violet-400 transition-colors">
+                      class="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2 group-focus-within:text-indigo-600 dark:group-focus-within:text-indigo-400 transition-colors">
                       Email Address
                     </label>
                     <div class="relative">
                       <Icon icon="ph:envelope-duotone"
-                        class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 dark:text-slate-500 group-focus-within:text-violet-500 dark:group-focus-within:text-violet-400 transition-colors" />
+                        class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 dark:text-slate-500 group-focus-within:text-indigo-500 dark:group-focus-within:text-indigo-400 transition-colors" />
                       <input v-model="form.email" type="email" id="email" placeholder="john@example.com"
-                        class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] rounded-xl text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-violet-400 dark:focus:border-violet-500/50 focus:bg-white dark:focus:bg-violet-500/5 focus:ring-2 focus:ring-violet-500/20 transition-all duration-300"
+                        class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] rounded-xl text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-400 dark:focus:border-indigo-500/50 focus:bg-white dark:focus:bg-indigo-500/5 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300"
                         required />
                     </div>
                   </div>
@@ -212,14 +212,14 @@ const socialLinks = [
                 <!-- Subject -->
                 <div class="group">
                   <label for="subject"
-                    class="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2 group-focus-within:text-violet-600 dark:group-focus-within:text-violet-400 transition-colors">
+                    class="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2 group-focus-within:text-indigo-600 dark:group-focus-within:text-indigo-400 transition-colors">
                     What can we help you with?
                   </label>
                   <div class="relative">
                     <Icon icon="ph:briefcase-duotone"
-                      class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 dark:text-slate-500 group-focus-within:text-violet-500 dark:group-focus-within:text-violet-400 transition-colors z-10" />
+                      class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 dark:text-slate-500 group-focus-within:text-indigo-500 dark:group-focus-within:text-indigo-400 transition-colors z-10" />
                     <select v-model="form.subject" id="subject"
-                      class="w-full pl-12 pr-10 py-3.5 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] rounded-xl text-slate-800 dark:text-white appearance-none cursor-pointer focus:outline-none focus:border-violet-400 dark:focus:border-violet-500/50 focus:bg-white dark:focus:bg-violet-500/5 focus:ring-2 focus:ring-violet-500/20 transition-all duration-300"
+                      class="w-full pl-12 pr-10 py-3.5 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] rounded-xl text-slate-800 dark:text-white appearance-none cursor-pointer focus:outline-none focus:border-indigo-400 dark:focus:border-indigo-500/50 focus:bg-white dark:focus:bg-indigo-500/5 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300"
                       :class="{ 'text-slate-400 dark:text-slate-600': !form.subject }" required>
                       <option value="" disabled class="bg-white dark:bg-slate-900">Select a service</option>
                       <option v-for="subject in subjects" :key="subject" :value="subject"
@@ -235,15 +235,15 @@ const socialLinks = [
                 <!-- Message -->
                 <div class="group">
                   <label for="message"
-                    class="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2 group-focus-within:text-violet-600 dark:group-focus-within:text-violet-400 transition-colors">
+                    class="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2 group-focus-within:text-indigo-600 dark:group-focus-within:text-indigo-400 transition-colors">
                     Your Message
                   </label>
                   <div class="relative">
                     <Icon icon="ph:chat-text-duotone"
-                      class="absolute left-4 top-4 w-5 h-5 text-slate-400 dark:text-slate-500 group-focus-within:text-violet-500 dark:group-focus-within:text-violet-400 transition-colors" />
+                      class="absolute left-4 top-4 w-5 h-5 text-slate-400 dark:text-slate-500 group-focus-within:text-indigo-500 dark:group-focus-within:text-indigo-400 transition-colors" />
                     <textarea v-model="form.message" id="message" rows="5"
                       placeholder="Tell us about your project, goals, and timeline..."
-                      class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] rounded-xl text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-violet-400 dark:focus:border-violet-500/50 focus:bg-white dark:focus:bg-violet-500/5 focus:ring-2 focus:ring-violet-500/20 transition-all duration-300 resize-none"
+                      class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] rounded-xl text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-400 dark:focus:border-indigo-500/50 focus:bg-white dark:focus:bg-indigo-500/5 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300 resize-none"
                       required></textarea>
                   </div>
                 </div>
@@ -251,7 +251,7 @@ const socialLinks = [
                 <!-- Submit Button -->
                 <div class="pt-2">
                   <button type="submit" :disabled="isSubmitting"
-                    class="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0">
+                    class="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0">
                     <span v-if="!isSubmitting">Send Message</span>
                     <span v-else>Sending...</span>
 
@@ -267,7 +267,7 @@ const socialLinks = [
                 <p class="text-slate-500 dark:text-slate-500 text-sm">
                   By submitting, you agree to our
                   <a href="#"
-                    class="text-violet-600 dark:text-violet-400 hover:text-violet-500 dark:hover:text-violet-300 underline underline-offset-2">Privacy
+                    class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 underline underline-offset-2">Privacy
                     Policy</a>.
                 </p>
               </form>
@@ -392,12 +392,12 @@ textarea::-webkit-scrollbar-track {
 }
 
 textarea::-webkit-scrollbar-thumb {
-  background: rgba(139, 92, 246, 0.3);
+  background: rgba(99, 102, 241, 0.3);
   border-radius: 3px;
 }
 
 textarea::-webkit-scrollbar-thumb:hover {
-  background: rgba(139, 92, 246, 0.5);
+  background: rgba(99, 102, 241, 0.5);
 }
 
 /* Focus visible for accessibility */
@@ -406,7 +406,7 @@ select:focus-visible,
 textarea:focus-visible,
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid rgba(139, 92, 246, 0.5);
+  outline: 2px solid rgba(99, 102, 241, 0.5);
   outline-offset: 2px;
 }
 </style>

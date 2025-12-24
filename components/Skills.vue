@@ -1,5 +1,5 @@
 <template>
-  <section class="skills-section py-16 md:py-20 lg:py-24 px-4 transition-colors duration-300 overflow-hidden">
+  <section id="skills" class="skills-section py-20 md:py-24 lg:py-28 px-4 transition-colors duration-300 overflow-hidden">
     <div class="max-w-7xl mx-auto">
       <!-- Header -->
       <div class="text-center mb-12 md:mb-16 animate-fade-in">
@@ -7,10 +7,10 @@
           <h2
             class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
             Areas of <span
-              class="bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 bg-clip-text text-transparent">Strength</span>
+              class="bg-gradient-to-r from-indigo-500 via-purple-500 to-purple-600 bg-clip-text text-transparent">Strength</span>
           </h2>
           <div
-            class="h-1 w-16 md:w-20 mx-auto bg-gradient-to-r from-purple-500 to-purple-600 rounded-full animate-expand">
+            class="h-1 w-16 md:w-20 mx-auto bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full animate-expand">
           </div>
         </div>
         <p
@@ -164,7 +164,7 @@
           {{ skills.length }} Technologies • Always Learning
         </p>
         <div
-          class="h-1 w-10 md:w-12 mx-auto bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 rounded-full opacity-30 animate-pulse-slow">
+          class="h-1 w-10 md:w-12 mx-auto bg-gradient-to-r from-indigo-400 via-purple-500 to-purple-600 rounded-full opacity-30 animate-pulse-slow">
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <section id="work"
-    class="relative bg-gradient-to-br from-slate-50 via-white to-indigo-50/50 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950/50 py-20 md:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    class="relative bg-gradient-to-br from-slate-50 via-white to-indigo-50/50 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950/50 py-16 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
     <!-- Animated Background Elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div
@@ -16,35 +16,19 @@
 
     <div class="max-w-7xl mx-auto relative z-10">
       <!-- Header with Creative Design -->
-      <div class="mb-12 sm:mb-16 text-center">
-        <div class="inline-block mb-6 relative">
-          <div class="absolute inset-0 bg-indigo-500/20 blur-xl rounded-full"></div>
+      <div class="text-center mb-12 sm:mb-16 md:mb-20">
+        <div
+          class="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 bg-purple-100 dark:bg-purple-900/30 rounded-full">
+          <Icon icon="ph:folder-notch-open-duotone" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 mr-2" />
           <span
-            class="relative text-sm font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-[0.3em] px-6 py-2 rounded-full border border-indigo-500/30 bg-indigo-500/5 backdrop-blur-sm">
-            Featured Works
-          </span>
+            class="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300 uppercase tracking-wide">Featured Works</span>
         </div>
-
-        <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white mb-6 leading-tight">
-          Projects that
-          <span class="relative inline-block">
-            <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600 dark:from-indigo-400 dark:via-purple-500 dark:to-purple-600 animate-gradient">
-              inspire
-            </span>
-            <svg class="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 100 8" preserveAspectRatio="none">
-              <path d="M0,4 Q25,0 50,4 T100,4" stroke="url(#gradient)" stroke-width="2" fill="none" />
-              <defs>
-                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style="stop-color:rgb(99, 102, 241);stop-opacity:1" />
-                  <stop offset="100%" style="stop-color:rgb(147, 51, 234);stop-opacity:1" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </span>
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
+          Projects that <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-400">Inspire</span>
         </h2>
-
-        <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+        <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
           Crafting digital experiences that blend creativity with cutting-edge technology
         </p>
       </div>
@@ -221,6 +205,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { Icon } from '@iconify/vue'
 
 const currentPage = ref(1)
 const itemsPerPage = ref(6)

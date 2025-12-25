@@ -22,83 +22,11 @@
       </div>
     </div>
 
-    <!-- Professional Navigation with higher z-index -->
-    <nav :class="[
-      'fixed w-full z-50 top-0 transition-all duration-300',
-      isScrolled ? (isDark ? 'bg-slate-900/95 backdrop-blur-md shadow-xl border-b border-slate-700 py-2' : 'bg-white/95 backdrop-blur-md shadow-xl py-2') : 'bg-transparent py-4'
-    ]">
-      <div class="container mx-auto px-4 flex items-center justify-between">
-        <!-- Logo -->
-        <div class="flex items-center space-x-3">
-          <div
-            class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-            <Icon icon="mdi:code-braces" class="w-6 h-6 text-white" />
-          </div>
-          <span :class="[
-            'text-2xl font-bold transition-colors duration-300',
-            isDark ? 'text-white' : 'text-slate-900'
-          ]">
-            Portfolio
-          </span>
-        </div>
-
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a v-for="item in navItems" :key="item.name" :href="item.href" :class="[
-            'font-medium transition-all duration-300 hover:scale-105',
-            isDark ? 'text-slate-300 hover:text-indigo-400' : 'text-slate-700 hover:text-indigo-600'
-          ]">
-            {{ item.name }}
-          </a>
-        </div>
-
-        <!-- Action Buttons -->
-        <div class="flex items-center space-x-2 md:space-x-4">
-          <!-- Dark Mode Toggle -->
-          <button @click="toggleDarkMode" :class="[
-            'p-2 rounded-full transition-all duration-300 hover:scale-110 flex-shrink-0',
-            isDark ? 'bg-slate-800 text-amber-400 hover:bg-slate-700' : 'bg-gray-100 text-slate-600 hover:bg-gray-200'
-          ]">
-            <Icon :icon="isDark ? 'mdi:weather-sunny' : 'mdi:weather-night'" class="w-5 h-5" />
-          </button>
-
-          <!-- CTA Button -->
-          <button
-            class="hidden sm:block bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-medium px-4 md:px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl text-sm md:text-base">
-            Resume
-          </button>
-
-          <!-- Mobile Menu Toggle -->
-          <button @click="toggleMobileMenu" class="md:hidden p-2 rounded-lg flex-shrink-0"
-            :class="isDark ? 'text-white' : 'text-slate-900'">
-            <Icon icon="mdi:menu" class="w-6 h-6" />
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div v-if="isMobileMenuOpen" :class="[
-        'md:hidden mt-4 mx-4 rounded-xl shadow-xl border transition-all duration-300 z-50',
-        isDark ? 'bg-slate-800/95 backdrop-blur-md border-slate-700' : 'bg-white/95 backdrop-blur-md border-gray-200'
-      ]">
-        <div class="p-4 space-y-3">
-          <a v-for="item in navItems" :key="item.name" :href="item.href" :class="[
-            'block font-medium py-2 transition-colors duration-300',
-            isDark ? 'text-slate-300 hover:text-indigo-400' : 'text-slate-700 hover:text-indigo-600'
-          ]">
-            {{ item.name }}
-          </a>
-          <!-- Mobile Resume Button -->
-          <button
-            class="sm:hidden w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-medium py-3 rounded-full transition-all duration-300 mt-4">
-            Resume
-          </button>
-        </div>
-      </div>
-    </nav>
+    <!-- Header Component -->
+    <Header :is-dark="isDark" @toggle-dark-mode="toggleDarkMode" />
 
     <!-- Hero Content -->
-    <div class="relative z-10 min-h-screen flex items-center">
+    <div id="home" class="relative z-10 min-h-screen flex items-center">
       <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <!-- Left Content -->
@@ -209,24 +137,15 @@
   <Project />
   <Gallery />
   <Contact/>
+  <Footer :is-dark="isDark" />
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { Icon } from '@iconify/vue'
 
 // Reactive state
 const isDark = ref(false)
-const isScrolled = ref(false)
-const isMobileMenuOpen = ref(false)
-
-// Navigation items
-const navItems = [
-  { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Work', href: '#work' },
-  { name: 'Contact', href: '#contact' }
-]
 
 // Social links
 const socialLinks = [
@@ -298,19 +217,11 @@ const generateBubbles = () => {
   bubbles.value = bubbleArray
 }
 
-// Event handlers
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50
-}
-
+// Toggle dark mode
 const toggleDarkMode = () => {
   isDark.value = !isDark.value
   localStorage.setItem('darkMode', isDark.value.toString())
   document.documentElement.classList.toggle('dark', isDark.value)
-}
-
-const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value
 }
 
 // Lifecycle
@@ -326,13 +237,6 @@ onMounted(() => {
 
   // Generate varied bubbles
   generateBubbles()
-
-  // Add scroll listener
-  window.addEventListener('scroll', handleScroll)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 

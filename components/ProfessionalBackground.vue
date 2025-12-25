@@ -1,6 +1,6 @@
 <template>
   <section id="experience"
-    class="relative py-20 md:py-24 lg:py-28 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-indigo-950 transition-colors duration-300">
+    class="relative py-16 md:py-20 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-indigo-950 transition-colors duration-300">
     <!-- Animated Background Elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div
@@ -40,7 +40,7 @@
       </div>
 
       <!-- Timeline -->
-      <div class="max-w-6xl mx-auto">
+      <div class="max-w-4xl mx-auto">
         <div class="relative">
           <!-- Timeline Line -->
           <div
@@ -68,15 +68,13 @@
 
               <!-- Content Card -->
               <div class="md:w-1/2 ml-20 sm:ml-24 md:ml-0"
-                :class="index % 2 === 0 ? 'md:pr-8 lg:pr-12 md:text-right' : 'md:pl-8 lg:pl-12 md:text-left'">
+                :class="index % 2 === 0 ? 'md:pr-10 lg:pr-12 md:text-right' : 'md:pl-10 lg:pl-12 md:text-left'">
                 <div
-                  class="group relative bg-white dark:bg-gray-800 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-400 hover:-translate-y-1 overflow-hidden">
-                  <!-- Corner Circles - Visible and Deep Colors -->
-                  <div class="absolute -top-8 -right-8 w-28 h-28 rounded-full opacity-60 dark:opacity-40"
-                    :style="{ backgroundColor: item.cornerColor1 }"></div>
-                  <div class="absolute -bottom-8 -left-8 w-32 h-32 rounded-full opacity-50 dark:opacity-35"
-                    :style="{ backgroundColor: item.cornerColor2 }"
-                    :class="index % 2 === 0 ? 'md:-right-8 md:-left-auto' : ''"></div>
+                  class="group relative bg-white dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-4 sm:p-5 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700/50 hover:-translate-y-1 overflow-hidden"
+                  :class="item.borderHoverClass">
+                  <!-- Single Corner Circle - Different Colors -->
+                  <div class="absolute -top-8 -right-8 w-24 h-24 rounded-full opacity-25 dark:opacity-20 transition-opacity duration-300 group-hover:opacity-40 dark:group-hover:opacity-30"
+                    :class="item.circleClass"></div>
 
                   <!-- Content -->
                   <div class="relative z-10">
@@ -123,32 +121,32 @@ const backgroundItems = ref([
     title: 'Software Engineer',
     company: 'AT Limited',
     icon: 'ph:briefcase-duotone',
-    cornerColor1: '#a855f7',
-    cornerColor2: '#ec4899'
+    circleClass: 'bg-purple-400',
+    borderHoverClass: 'hover:border-purple-300 dark:hover:border-purple-500/50'
   },
   {
     date: 'March 27, 2023 – November 30, 2023',
     title: 'Junior Software Engineer',
     company: 'Neutron Ltd',
     icon: 'ph:code-duotone',
-    cornerColor1: '#8b5cf6',
-    cornerColor2: '#06b6d4'
+    circleClass: 'bg-sky-400',
+    borderHoverClass: 'hover:border-sky-300 dark:hover:border-sky-500/50'
   },
   {
     date: 'May 10, 2022 – March 8, 2023',
     title: 'Assistant Senior Officer',
     company: 'Walton Digi-Tech Industries Limited',
     icon: 'ph:user-gear-duotone',
-    cornerColor1: '#f59e0b',
-    cornerColor2: '#a855f7'
+    circleClass: 'bg-amber-400',
+    borderHoverClass: 'hover:border-amber-300 dark:hover:border-amber-500/50'
   },
   {
     date: 'June 10, 2021 – December 10, 2021',
     title: 'Frontend Developer',
     company: 'Developer Experience Hub',
     icon: 'ph:devices-duotone',
-    cornerColor1: '#10b981',
-    cornerColor2: '#3b82f6'
+    circleClass: 'bg-emerald-400',
+    borderHoverClass: 'hover:border-emerald-300 dark:hover:border-emerald-500/50'
   }
 ]);
 </script>

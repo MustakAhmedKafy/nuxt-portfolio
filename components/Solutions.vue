@@ -1,6 +1,6 @@
 <template>
   <section id="services"
-    class="bg-gradient-to-br from-slate-50 via-indigo-50/30 to-slate-100 dark:from-slate-950 dark:via-indigo-950/20 dark:to-slate-900 py-20 md:py-24 lg:py-28 px-4 sm:px-6 relative overflow-hidden">
+    class="bg-gradient-to-br from-slate-50 via-indigo-50/30 to-slate-100 dark:from-slate-950 dark:via-indigo-950/20 dark:to-slate-900 py-16 md:py-20 px-4 sm:px-6 relative overflow-hidden">
 
     <!-- Animated Background Elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -11,19 +11,19 @@
 
     <div class="max-w-7xl mx-auto relative z-10">
       <!-- Section Header -->
-      <div class="mb-16 text-center animate-fade-in">
+      <div class="text-center mb-12 sm:mb-16 md:mb-20">
         <div
-          class="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 dark:bg-purple-500/20 rounded-full mb-4 border border-purple-500/20">
-          <span class="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
-          <p class="text-purple-600 dark:text-purple-400 text-sm font-semibold tracking-wider uppercase">
-            Technical Expertise
-          </p>
+          class="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 bg-purple-100 dark:bg-purple-900/30 rounded-full">
+          <Icon icon="ph:gear-six-duotone" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 mr-2" />
+          <span
+            class="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300 uppercase tracking-wide">Technical Expertise</span>
         </div>
         <h2
-          class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 dark:from-white dark:via-purple-200 dark:to-white bg-clip-text text-transparent mb-6">
-          Skills & Technologies
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
+          Skills & <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-400">Technologies</span>
         </h2>
-        <p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
+        <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
           Crafting pixel-perfect, accessible interfaces with modern tools and frameworks
         </p>
       </div>

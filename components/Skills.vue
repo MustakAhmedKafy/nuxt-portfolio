@@ -1,20 +1,21 @@
 <template>
-  <section id="skills" class="skills-section py-20 md:py-24 lg:py-28 px-4 transition-colors duration-300 overflow-hidden">
+  <section id="skills" class="skills-section py-16 md:py-20 px-4 transition-colors duration-300 overflow-hidden">
     <div class="max-w-7xl mx-auto">
       <!-- Header -->
       <div class="text-center mb-12 md:mb-16 animate-fade-in">
-        <div class="inline-block mb-4">
-          <h2
-            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
-            Areas of <span
-              class="bg-gradient-to-r from-indigo-500 via-purple-500 to-purple-600 bg-clip-text text-transparent">Strength</span>
-          </h2>
-          <div
-            class="h-1 w-16 md:w-20 mx-auto bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full animate-expand">
-          </div>
+        <div
+          class="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 bg-purple-100 dark:bg-purple-900/30 rounded-full">
+          <Icon icon="ph:star-four-duotone" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 mr-2" />
+          <span
+            class="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300 uppercase tracking-wide">Areas of Expertise</span>
         </div>
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
+          Areas of <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-400">Strength</span>
+        </h2>
         <p
-          class="text-sm sm:text-base md:text-lg text-gray-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed mt-4 md:mt-6 px-4">
+          class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
           Proficient in responsive design, cross-browser compatibility, and UI/UX principles. Strong problem-solving
           skills, collaboration, and attention to detail.
         </p>
@@ -173,6 +174,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import { Icon } from '@iconify/vue'
 
 const skills = [
   {

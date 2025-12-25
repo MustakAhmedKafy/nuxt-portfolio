@@ -1,14 +1,21 @@
 <template>
   <section id="gallery"
-    class="bg-gradient-to-br from-gray-50 to-indigo-50 dark:from-gray-900 dark:to-indigo-950 transition-colors duration-500 py-20 md:py-24 lg:py-28 px-4">
+    class="bg-gradient-to-br from-gray-50 to-indigo-50 dark:from-gray-900 dark:to-indigo-950 transition-colors duration-500 py-16 md:py-20 px-4">
     <div class="max-w-7xl mx-auto">
       <!-- Header Section -->
-      <div class="text-center mb-12 sm:mb-16 space-y-4">
+      <div class="text-center mb-12 sm:mb-16 md:mb-20">
+        <div
+          class="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 bg-purple-100 dark:bg-purple-900/30 rounded-full">
+          <Icon icon="ph:images-duotone" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 mr-2" />
+          <span
+            class="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300 uppercase tracking-wide">Creative Portfolio</span>
+        </div>
         <h2
-          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-500 dark:from-indigo-400 dark:to-purple-400 animate-fade-in">
-          My Work
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
+          My <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-400">Work</span>
         </h2>
-        <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+        <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
           Capturing moments, creating memories
         </p>
       </div>
@@ -109,6 +116,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { Icon } from '@iconify/vue'
 
 // Gallery Data
 const images = ref([

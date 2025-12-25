@@ -94,35 +94,30 @@ const socialLinks = [
       </div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 lg:py-28">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
       <!-- Header Section -->
-      <div class="text-center mb-12 sm:mb-16">
+      <div class="text-center mb-12 sm:mb-16 md:mb-20">
         <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 mb-6 backdrop-blur-sm">
-          <span class="w-2 h-2 bg-indigo-500 dark:bg-indigo-400 rounded-full animate-pulse"></span>
-          <span class="text-indigo-600 dark:text-indigo-300 text-sm font-medium tracking-wide">Available for
-            Projects</span>
-        </div>
-
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-          <span class="text-slate-800 dark:text-white">Let's Create</span>
-          <br>
+          class="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 bg-purple-100 dark:bg-purple-900/30 rounded-full">
+          <Icon icon="ph:envelope-simple-duotone" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 mr-2" />
           <span
-            class="bg-gradient-to-r from-indigo-600 via-purple-500 to-purple-600 dark:from-indigo-400 dark:via-purple-400 dark:to-purple-500 bg-clip-text text-transparent">
-            Something Amazing
-          </span>
-        </h1>
-
-        <p class="text-slate-600 dark:text-slate-400 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+            class="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300 uppercase tracking-wide">Get in Touch</span>
+        </div>
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
+          Let's Create <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-400">Something Amazing</span>
+        </h2>
+        <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
           Have a project in mind? We'd love to hear about it. Send us a message and let's bring your vision to life.
         </p>
       </div>
 
       <!-- Main Content Grid -->
-      <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+      <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-stretch">
 
         <!-- Left Side - Contact Info -->
-        <div class="lg:col-span-2 space-y-6">
+        <div class="lg:col-span-2 flex flex-col space-y-6">
           <!-- Contact Cards -->
           <div class="space-y-4">
             <a v-for="(info, index) in contactInfo" :key="index" :href="info.href"
@@ -155,7 +150,7 @@ const socialLinks = [
 
           <!-- Decorative Quote -->
           <div
-            class="hidden lg:block p-6 rounded-2xl bg-gradient-to-br from-indigo-100/80 to-purple-100/50 dark:from-indigo-500/10 dark:to-purple-500/5 border border-indigo-200/50 dark:border-indigo-500/10">
+            class="hidden lg:flex flex-col justify-center flex-grow p-6 rounded-2xl bg-gradient-to-br from-indigo-100/80 to-purple-100/50 dark:from-indigo-500/10 dark:to-purple-500/5 border border-indigo-200/50 dark:border-indigo-500/10">
             <Icon icon="ph:quotes-fill" class="w-8 h-8 text-indigo-400/60 dark:text-indigo-500/50 mb-3" />
             <p class="text-slate-700 dark:text-slate-300 italic leading-relaxed">
               "Great design is not just what it looks like, but how it works and feels."
@@ -165,8 +160,8 @@ const socialLinks = [
         </div>
 
         <!-- Right Side - Contact Form -->
-        <div class="lg:col-span-3">
-          <div class="relative">
+        <div class="lg:col-span-3 flex flex-col">
+          <div class="relative flex-grow flex flex-col">
             <!-- Glow Effect Behind Card -->
             <div
               class="absolute -inset-1 bg-gradient-to-r from-indigo-400/30 via-purple-400/30 to-purple-500/30 dark:from-indigo-600/20 dark:via-purple-600/20 dark:to-purple-700/20 rounded-3xl blur-xl opacity-60 dark:opacity-50">
@@ -174,7 +169,7 @@ const socialLinks = [
 
             <!-- Form Card -->
             <div
-              class="relative bg-white/90 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-slate-200 dark:border-white/[0.08] p-6 sm:p-8 lg:p-10 shadow-xl shadow-indigo-500/5 dark:shadow-none">
+              class="relative flex-grow bg-white/90 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-slate-200 dark:border-white/[0.08] p-6 sm:p-8 lg:p-10 shadow-xl shadow-indigo-500/5 dark:shadow-none">
               <form @submit.prevent="handleSubmit" class="space-y-6">
                 <!-- Name & Email Row -->
                 <div class="grid sm:grid-cols-2 gap-6">

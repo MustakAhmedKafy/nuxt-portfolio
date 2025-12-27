@@ -19,7 +19,7 @@
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
-      <div class="text-center mb-12 sm:mb-16 md:mb-20">
+      <div class="text-center mb-12 sm:mb-16 md:mb-20" data-aos="fade-up">
         <div
           class="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 bg-purple-100 dark:bg-purple-900/30 rounded-full">
           <icon icon="ph:briefcase-duotone" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 mr-2" />
@@ -48,7 +48,8 @@
           </div>
 
           <!-- Timeline Items -->
-          <div v-for="(item, index) in backgroundItems" :key="index" class="relative mb-8 sm:mb-10 md:mb-12 last:mb-0">
+          <div v-for="(item, index) in backgroundItems" :key="index" class="relative mb-8 sm:mb-10 md:mb-12 last:mb-0"
+            data-aos="fade-up" :data-aos-delay="index * 150">
             <div class="flex flex-col md:flex-row md:items-center gap-6"
               :class="index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'">
               <!-- Timeline Dot -->

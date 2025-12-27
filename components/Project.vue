@@ -16,7 +16,7 @@
 
     <div class="max-w-7xl mx-auto relative z-10">
       <!-- Header with Creative Design -->
-      <div class="text-center mb-12 sm:mb-16 md:mb-20">
+      <div class="text-center mb-12 sm:mb-16 md:mb-20" data-aos="fade-up">
         <div
           class="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 bg-purple-100 dark:bg-purple-900/30 rounded-full">
           <Icon icon="ph:folder-notch-open-duotone" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 mr-2" />
@@ -37,8 +37,8 @@
       <div class="mb-16">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="(project, index) in paginatedProjects" :key="project.id"
-            :style="{ animationDelay: `${index * 100}ms` }"
-            class="group relative overflow-hidden rounded-3xl transition-all duration-500 hover:scale-[1.02] animate-fade-in-up">
+            data-aos="fade-up" :data-aos-delay="index * 100"
+            class="group relative overflow-hidden rounded-3xl transition-all duration-500 hover:scale-[1.02]">
             <!-- Glassmorphism Card -->
             <div
               class="relative h-full bg-gradient-to-br from-slate-100/80 to-white/80 dark:from-slate-800/50 dark:to-slate-900/50 backdrop-blur-xl border border-slate-300/50 dark:border-slate-700/50 group-hover:border-indigo-500/50 dark:group-hover:border-indigo-500/50 transition-all duration-500 rounded-3xl overflow-hidden">

@@ -3,7 +3,7 @@
     class="bg-gradient-to-br from-gray-50 to-indigo-50 dark:from-gray-900 dark:to-indigo-950 transition-colors duration-500 py-16 md:py-20 px-4">
     <div class="max-w-7xl mx-auto">
       <!-- Header Section -->
-      <div class="text-center mb-12 sm:mb-16 md:mb-20">
+      <div class="text-center mb-12 sm:mb-16 md:mb-20" data-aos="fade-up">
         <div
           class="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 bg-purple-100 dark:bg-purple-900/30 rounded-full">
           <Icon icon="ph:images-duotone" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 mr-2" />
@@ -21,7 +21,7 @@
       </div>
 
       <!-- Filter Tabs -->
-      <div class="flex flex-wrap justify-center gap-3 mb-12">
+      <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up" data-aos-delay="100">
         <button v-for="category in categories" :key="category" @click="activeCategory = category" :class="[
           'px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105',
           activeCategory === category
@@ -33,7 +33,7 @@
       </div>
 
       <!-- Gallery Grid -->
-      <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+      <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6" data-aos="fade-up" data-aos-delay="200">
         <TransitionGroup name="gallery">
           <div v-for="(image, index) in filteredImages" :key="image.id" @click="openLightbox(index)"
             :style="{ animationDelay: `${index * 0.1}s` }"

@@ -15,7 +15,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
           <!-- Brand Column -->
-          <div class="lg:col-span-1">
+          <div class="lg:col-span-1" data-aos="fade-up" data-aos-delay="0">
             <a href="#home" class="flex items-center space-x-3 group mb-6">
               <div class="w-11 h-11 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/30 group-hover:shadow-purple-500/50 transition-all duration-300 group-hover:scale-105">
                 <Icon icon="ph:code-bold" class="w-6 h-6 text-white" />
@@ -39,7 +39,7 @@
           </div>
 
           <!-- Quick Links -->
-          <div>
+          <div data-aos="fade-up" data-aos-delay="100">
             <h4 class="text-lg font-semibold mb-6 flex items-center transition-colors"
               :class="isDark ? 'text-white' : 'text-slate-900'">
               <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
@@ -58,7 +58,7 @@
           </div>
 
           <!-- Services -->
-          <div>
+          <div data-aos="fade-up" data-aos-delay="200">
             <h4 class="text-lg font-semibold mb-6 flex items-center transition-colors"
               :class="isDark ? 'text-white' : 'text-slate-900'">
               <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
@@ -76,7 +76,7 @@
           </div>
 
           <!-- Contact Info -->
-          <div>
+          <div data-aos="fade-up" data-aos-delay="300">
             <h4 class="text-lg font-semibold mb-6 flex items-center transition-colors"
               :class="isDark ? 'text-white' : 'text-slate-900'">
               <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>

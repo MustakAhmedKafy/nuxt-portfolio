@@ -2,7 +2,7 @@
   <section id="skills" class="skills-section py-16 md:py-20 px-4 transition-colors duration-300 overflow-hidden">
     <div class="max-w-7xl mx-auto">
       <!-- Header -->
-      <div class="text-center mb-12 md:mb-16 animate-fade-in">
+      <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
         <div
           class="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 bg-purple-100 dark:bg-purple-900/30 rounded-full">
           <Icon icon="ph:star-four-duotone" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 mr-2" />
@@ -160,7 +160,7 @@
       </div>
 
       <!-- Stats or CTA -->
-      <div class="mt-12 md:mt-16 text-center animate-fade-in-delayed">
+      <div class="mt-12 md:mt-16 text-center" data-aos="fade-up" data-aos-delay="200">
         <p class="text-xs sm:text-sm text-gray-500 dark:text-slate-400 mb-4">
           {{ skills.length }} Technologies • Always Learning
         </p>

@@ -96,7 +96,7 @@ const socialLinks = [
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
       <!-- Header Section -->
-      <div class="text-center mb-12 sm:mb-16 md:mb-20">
+      <div class="text-center mb-12 sm:mb-16 md:mb-20" data-aos="fade-up">
         <div
           class="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 bg-purple-100 dark:bg-purple-900/30 rounded-full">
           <Icon icon="ph:envelope-simple-duotone" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 mr-2" />
@@ -117,7 +117,7 @@ const socialLinks = [
       <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-stretch">
 
         <!-- Left Side - Contact Info -->
-        <div class="lg:col-span-2 flex flex-col space-y-6">
+        <div class="lg:col-span-2 flex flex-col space-y-6" data-aos="fade-right" data-aos-delay="100">
           <!-- Contact Cards -->
           <div class="space-y-4">
             <a v-for="(info, index) in contactInfo" :key="index" :href="info.href"
@@ -160,7 +160,7 @@ const socialLinks = [
         </div>
 
         <!-- Right Side - Contact Form -->
-        <div class="lg:col-span-3 flex flex-col">
+        <div class="lg:col-span-3 flex flex-col" data-aos="fade-left" data-aos-delay="200">
           <div class="relative flex-grow flex flex-col">
             <!-- Glow Effect Behind Card -->
             <div

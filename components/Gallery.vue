@@ -1,32 +1,39 @@
 <template>
-  <section
-    class="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50 dark:from-gray-900 dark:to-purple-950 transition-colors duration-500 py-20 px-4">
+  <section id="gallery"
+    class="bg-gradient-to-br from-gray-50 to-indigo-50 dark:from-gray-900 dark:to-indigo-950 transition-colors duration-500 py-16 md:py-20 px-4">
     <div class="max-w-7xl mx-auto">
       <!-- Header Section -->
-      <div class="text-center mb-16 space-y-4">
+      <div class="text-center mb-12 sm:mb-16 md:mb-20" data-aos="fade-up">
+        <div
+          class="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 bg-purple-100 dark:bg-purple-900/30 rounded-full">
+          <Icon icon="ph:images-duotone" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 mr-2" />
+          <span
+            class="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300 uppercase tracking-wide">Creative Portfolio</span>
+        </div>
         <h2
-          class="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-400 dark:from-purple-400 dark:to-purple-300 animate-fade-in">
-          My Work
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
+          My <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-400">Work</span>
         </h2>
-        <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+        <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
           Capturing moments, creating memories
         </p>
       </div>
 
       <!-- Filter Tabs -->
-      <div class="flex flex-wrap justify-center gap-3 mb-12">
+      <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up" data-aos-delay="100">
         <button v-for="category in categories" :key="category" @click="activeCategory = category" :class="[
           'px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105',
           activeCategory === category
-            ? 'bg-purple-500 text-white shadow-lg shadow-purple-500/50 dark:shadow-purple-500/30'
-            : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-gray-700'
+            ? 'bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg shadow-indigo-500/50 dark:shadow-indigo-500/30'
+            : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-indigo-100 dark:hover:bg-gray-700'
         ]">
           {{ category }}
         </button>
       </div>
 
       <!-- Gallery Grid -->
-      <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+      <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6" data-aos="fade-up" data-aos-delay="200">
         <TransitionGroup name="gallery">
           <div v-for="(image, index) in filteredImages" :key="image.id" @click="openLightbox(index)"
             :style="{ animationDelay: `${index * 0.1}s` }"
@@ -40,12 +47,12 @@
               class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
               <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                 <h3 class="text-white text-xl font-bold mb-2">{{ image.title }}</h3>
-                <p class="text-purple-300 text-sm">{{ image.category }}</p>
+                <p class="text-indigo-300 text-sm">{{ image.category }}</p>
               </div>
 
               <!-- View Icon -->
               <div
-                class="absolute top-4 right-4 bg-purple-500 rounded-full p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300">
+                class="absolute top-4 right-4 bg-indigo-500 rounded-full p-3 transform scale-0 group-hover:scale-100 transition-transform duration-300">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
@@ -62,7 +69,7 @@
           class="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
           <!-- Close Button -->
           <button @click="closeLightbox"
-            class="absolute top-6 right-6 bg-purple-500 hover:bg-purple-600 text-white rounded-full p-3 transition-all duration-300 transform hover:scale-110 z-10">
+            class="absolute top-6 right-6 bg-indigo-500 hover:bg-indigo-600 text-white rounded-full p-3 transition-all duration-300 transform hover:scale-110 z-10">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -70,14 +77,14 @@
 
           <!-- Navigation -->
           <button @click.stop="prevImage"
-            class="absolute left-6 bg-purple-500/80 hover:bg-purple-500 text-white rounded-full p-4 transition-all duration-300 transform hover:scale-110">
+            class="absolute left-6 bg-indigo-500/80 hover:bg-indigo-500 text-white rounded-full p-4 transition-all duration-300 transform hover:scale-110">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
 
           <button @click.stop="nextImage"
-            class="absolute right-6 bg-purple-500/80 hover:bg-purple-500 text-white rounded-full p-4 transition-all duration-300 transform hover:scale-110">
+            class="absolute right-6 bg-indigo-500/80 hover:bg-indigo-500 text-white rounded-full p-4 transition-all duration-300 transform hover:scale-110">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
@@ -93,7 +100,7 @@
               <h3 class="text-white text-2xl font-bold mb-2">
                 {{ filteredImages[currentImageIndex]?.title }}
               </h3>
-              <p class="text-purple-300">
+              <p class="text-indigo-300">
                 {{ filteredImages[currentImageIndex]?.category }}
               </p>
               <p class="text-gray-400 mt-2">
@@ -109,6 +116,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { Icon } from '@iconify/vue'
 
 // Gallery Data
 const images = ref([

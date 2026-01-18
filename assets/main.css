@@ -31,22 +31,30 @@
   /* Repeat for other breakpoints (tablet, laptop, etc.) */
 }
 
-/* ===== Custom Colors ===== */
+/* ===== Unified Color System ===== */
+/* Primary: Indigo (#6366f1) - Used throughout the portfolio */
+/* Accent: Purple (#a855f7) - For gradients and highlights */
+
 @layer utilities {
-  /* Primary */
-  .bg-primary { background-color: #DB4444; }
-  .text-primary { color: #DB4444; }
-  .border-primary { border-color: #DB4444; }
+  /* Primary - Indigo */
+  .bg-primary { background-color: var(--primary); }
+  .text-primary { color: var(--primary); }
+  .border-primary { border-color: var(--primary); }
+
+  /* Accent - Purple */
+  .bg-accent { background-color: var(--accent); }
+  .text-accent { color: var(--accent); }
+  .border-accent { border-color: var(--accent); }
 
   /* Secondary */
-  .bg-secondary { background-color: #6c757d; }
-  .text-secondary { color: #6c757d; }
+  .bg-secondary { background-color: var(--secondary); }
+  .text-secondary { color: var(--secondary); }
 
   /* State Colors */
-  .bg-success { background-color: #28a745; }
-  .bg-danger { background-color: #dc3545; }
-  .bg-warning { background-color: #ffc107; }
-  /* Add others (info, light, dark) as needed */
+  .bg-success { background-color: #22c55e; }
+  .bg-danger { background-color: #ef4444; }
+  .bg-warning { background-color: #f59e0b; }
+  .bg-info { background-color: #3b82f6; }
 }
 
 
@@ -59,74 +67,131 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* === Base Colors === */
   --background: #f8fafc;
   --foreground: #1f2937;
   --card: #ffffff;
   --card-foreground: #374151;
   --popover: #ffffff;
   --popover-foreground: #374151;
+
+  /* === Primary Color System (Indigo) === */
   --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
   --primary-foreground: #ffffff;
+
+  /* === Accent Color (Purple) === */
+  --accent: #a855f7;
+  --accent-light: #c084fc;
+  --accent-dark: #9333ea;
+  --accent-foreground: #ffffff;
+
+  /* === Secondary === */
   --secondary: #374151;
   --secondary-foreground: #f8fafc;
-  --muted: #f8fafc;
-  --muted-foreground: #1f2937;
-  --accent: #6366f1;
-  --accent-foreground: #ffffff;
-  --destructive: #be123c;
+
+  /* === Muted === */
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+
+  /* === Gradient Colors (for consistent gradients) === */
+  --gradient-from: #6366f1;
+  --gradient-to: #a855f7;
+
+  /* === Destructive === */
+  --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #e5e7eb;
+
+  /* === Border & Input === */
+  --border: #e2e8f0;
   --input: #f8fafc;
   --ring: #6366f1;
+
+  /* === Chart Colors === */
   --chart-1: #6366f1;
-  --chart-2: #d97706;
-  --chart-3: #be123c;
-  --chart-4: #1f2937;
-  --chart-5: #374151;
+  --chart-2: #a855f7;
+  --chart-3: #ec4899;
+  --chart-4: #f59e0b;
+  --chart-5: #22c55e;
+
+  /* === Radius === */
   --radius: 0.5rem;
+
+  /* === Sidebar === */
   --sidebar: #ffffff;
   --sidebar-foreground: #1f2937;
   --sidebar-primary: #6366f1;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #d97706;
+  --sidebar-accent: #a855f7;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #e5e7eb;
+  --sidebar-border: #e2e8f0;
   --sidebar-ring: #6366f1;
+
+  /* === Section Spacing === */
+  --section-padding-y: 5rem;
+  --section-padding-y-md: 6rem;
+  --section-padding-y-lg: 7rem;
 }
 
 .dark {
+  /* === Base Colors === */
   --background: #0f172a;
   --foreground: #f1f5f9;
   --card: #1e293b;
   --card-foreground: #f1f5f9;
   --popover: #1e293b;
   --popover-foreground: #f1f5f9;
-  --primary: #6366f1;
-  --primary-foreground: #ffffff;
+
+  /* === Primary Color System (Indigo) === */
+  --primary: #818cf8;
+  --primary-light: #a5b4fc;
+  --primary-dark: #6366f1;
+  --primary-foreground: #0f172a;
+
+  /* === Accent Color (Purple) === */
+  --accent: #c084fc;
+  --accent-light: #d8b4fe;
+  --accent-dark: #a855f7;
+  --accent-foreground: #0f172a;
+
+  /* === Secondary === */
   --secondary: #334155;
   --secondary-foreground: #f1f5f9;
+
+  /* === Muted === */
   --muted: #334155;
   --muted-foreground: #94a3b8;
-  --accent: #6366f1;
-  --accent-foreground: #ffffff;
-  --destructive: #be123c;
-  --destructive-foreground: #ffffff;
+
+  /* === Gradient Colors (for consistent gradients) === */
+  --gradient-from: #818cf8;
+  --gradient-to: #c084fc;
+
+  /* === Destructive === */
+  --destructive: #f87171;
+  --destructive-foreground: #0f172a;
+
+  /* === Border & Input === */
   --border: #334155;
   --input: #334155;
-  --ring: #6366f1;
-  --chart-1: #6366f1;
-  --chart-2: #d97706;
-  --chart-3: #be123c;
-  --chart-4: #f1f5f9;
-  --chart-5: #94a3b8;
+  --ring: #818cf8;
+
+  /* === Chart Colors === */
+  --chart-1: #818cf8;
+  --chart-2: #c084fc;
+  --chart-3: #f472b6;
+  --chart-4: #fbbf24;
+  --chart-5: #4ade80;
+
+  /* === Sidebar === */
   --sidebar: #1e293b;
   --sidebar-foreground: #f1f5f9;
-  --sidebar-primary: #6366f1;
-  --sidebar-primary-foreground: #ffffff;
+  --sidebar-primary: #818cf8;
+  --sidebar-primary-foreground: #0f172a;
   --sidebar-accent: #334155;
   --sidebar-accent-foreground: #f1f5f9;
   --sidebar-border: #334155;
-  --sidebar-ring: #6366f1;
+  --sidebar-ring: #818cf8;
 }
 
 @theme inline {

@@ -1,50 +1,34 @@
 <template>
-  <section
-    class="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  <section id="work"
+    class="relative bg-gradient-to-br from-slate-50 via-white to-indigo-50/50 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950/50 py-16 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
     <!-- Animated Background Elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div
-        class="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse">
+        class="absolute top-20 left-10 w-72 h-72 bg-indigo-500/10 dark:bg-indigo-500/10 rounded-full blur-3xl animate-pulse">
       </div>
       <div
         class="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/10 dark:bg-purple-600/10 rounded-full blur-3xl animate-pulse delay-1000">
       </div>
       <div
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/5 dark:bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-500">
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/5 dark:bg-indigo-500/5 rounded-full blur-3xl animate-pulse delay-500">
       </div>
     </div>
 
     <div class="max-w-7xl mx-auto relative z-10">
       <!-- Header with Creative Design -->
-      <div class="mb-20 text-center">
-        <div class="inline-block mb-6 relative">
-          <div class="absolute inset-0 bg-purple-500/20 blur-xl rounded-full"></div>
+      <div class="text-center mb-12 sm:mb-16 md:mb-20" data-aos="fade-up">
+        <div
+          class="inline-flex items-center justify-center px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 bg-purple-100 dark:bg-purple-900/30 rounded-full">
+          <Icon icon="ph:folder-notch-open-duotone" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 mr-2" />
           <span
-            class="relative text-sm font-bold text-purple-600 dark:text-purple-400 uppercase tracking-[0.3em] px-6 py-2 rounded-full border border-purple-500/30 bg-purple-500/5 backdrop-blur-sm">
-            ✦ Featured Works ✦
-          </span>
+            class="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300 uppercase tracking-wide">Featured Works</span>
         </div>
-
-        <h2 class="text-5xl sm:text-7xl font-black text-slate-900 dark:text-white mb-6 leading-tight">
-          Projects that
-          <span class="relative inline-block">
-            <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-600 dark:from-purple-400 dark:via-purple-500 dark:to-purple-600 animate-gradient">
-              inspire
-            </span>
-            <svg class="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 100 8" preserveAspectRatio="none">
-              <path d="M0,4 Q25,0 50,4 T100,4" stroke="url(#gradient)" stroke-width="2" fill="none" />
-              <defs>
-                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style="stop-color:rgb(168, 85, 247);stop-opacity:1" />
-                  <stop offset="100%" style="stop-color:rgb(147, 51, 234);stop-opacity:1" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </span>
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
+          Projects that <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-400">Inspire</span>
         </h2>
-
-        <p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+        <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
           Crafting digital experiences that blend creativity with cutting-edge technology
         </p>
       </div>
@@ -53,16 +37,16 @@
       <div class="mb-16">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="(project, index) in paginatedProjects" :key="project.id"
-            :style="{ animationDelay: `${index * 100}ms` }"
-            class="group relative overflow-hidden rounded-3xl transition-all duration-500 hover:scale-[1.02] animate-fade-in-up">
+            data-aos="fade-up" :data-aos-delay="index * 100"
+            class="group relative overflow-hidden rounded-3xl transition-all duration-500 hover:scale-[1.02]">
             <!-- Glassmorphism Card -->
             <div
-              class="relative h-full bg-gradient-to-br from-slate-100/80 to-white/80 dark:from-slate-800/50 dark:to-slate-900/50 backdrop-blur-xl border border-slate-300/50 dark:border-slate-700/50 group-hover:border-purple-500/50 dark:group-hover:border-purple-500/50 transition-all duration-500 rounded-3xl overflow-hidden">
+              class="relative h-full bg-gradient-to-br from-slate-100/80 to-white/80 dark:from-slate-800/50 dark:to-slate-900/50 backdrop-blur-xl border border-slate-300/50 dark:border-slate-700/50 group-hover:border-indigo-500/50 dark:group-hover:border-indigo-500/50 transition-all duration-500 rounded-3xl overflow-hidden">
 
               <!-- Animated Gradient Border Effect -->
               <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <div
-                  class="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-transparent to-purple-500/20 animate-border-flow">
+                  class="absolute inset-0 bg-gradient-to-r from-indigo-500/20 via-transparent to-indigo-500/20 animate-border-flow">
                 </div>
               </div>
 
@@ -80,14 +64,14 @@
                 <div class="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
                   <span v-for="(tag, tagIndex) in project.tags.slice(0, 2)" :key="tag"
                     :style="{ animationDelay: `${tagIndex * 100}ms` }"
-                    class="px-4 py-1.5 rounded-full text-xs font-bold bg-purple-500/90 text-white backdrop-blur-md border border-purple-400/30 shadow-lg shadow-purple-500/20 transform group-hover:scale-110 transition-transform duration-300">
+                    class="px-4 py-1.5 rounded-full text-xs font-bold bg-indigo-500/90 text-white backdrop-blur-md border border-indigo-400/30 shadow-lg shadow-indigo-500/20 transform group-hover:scale-110 transition-transform duration-300">
                     {{ tag }}
                   </span>
                 </div>
 
                 <!-- Project Number Badge -->
                 <div
-                  class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-purple-500/30 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold text-sm shadow-lg">
+                  class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-indigo-500/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-bold text-sm shadow-lg">
                   {{ String(project.id).padStart(2, '0') }}
                 </div>
               </div>
@@ -96,7 +80,7 @@
               <div class="relative p-8 flex flex-col h-[calc(100%-16rem)]">
                 <!-- Title with Hover Effect -->
                 <h3
-                  class="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300 leading-tight">
+                  class="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300 leading-tight">
                   {{ project.name }}
                 </h3>
 
@@ -108,7 +92,7 @@
                 <!-- All Tags -->
                 <div class="flex flex-wrap gap-2 mb-6">
                   <span v-for="tag in project.tags" :key="tag"
-                    class="px-3 py-1 rounded-lg text-xs font-semibold bg-purple-500/10 text-purple-600 dark:text-purple-300 border border-purple-500/20 hover:bg-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
+                    class="px-3 py-1 rounded-lg text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:text-purple-300 border border-purple-500/20 hover:bg-indigo-500/20 hover:border-purple-500/40 transition-all duration-300">
                     {{ tag }}
                   </span>
                 </div>
@@ -117,7 +101,7 @@
                 <div
                   class="flex items-center justify-between pt-4 border-t border-slate-300/50 dark:border-slate-700/50">
                   <span
-                    class="text-sm font-bold text-purple-600 dark:text-purple-400 group-hover:text-purple-500 dark:group-hover:text-purple-300 transition-colors flex items-center gap-2">
+                    class="text-sm font-bold text-indigo-600 dark:text-indigo-400 group-hover:text-purple-500 dark:group-hover:text-purple-300 transition-colors flex items-center gap-2">
                     <span>Explore Project</span>
                     <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
                       stroke="currentColor" viewBox="0 0 24 24">
@@ -128,7 +112,7 @@
 
                   <div class="flex gap-3">
                     <button
-                      class="w-10 h-10 rounded-full bg-slate-200/50 dark:bg-slate-800/50 border border-slate-300/50 dark:border-slate-700/50 hover:border-purple-500/50 hover:bg-purple-500/10 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 group/btn">
+                      class="w-10 h-10 rounded-full bg-slate-200/50 dark:bg-slate-800/50 border border-slate-300/50 dark:border-slate-700/50 hover:border-purple-500/50 hover:bg-indigo-500/10 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 group/btn">
                       <svg class="w-5 h-5 group-hover/btn:scale-110 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -138,7 +122,7 @@
                       </svg>
                     </button>
                     <button
-                      class="w-10 h-10 rounded-full bg-slate-200/50 dark:bg-slate-800/50 border border-slate-300/50 dark:border-slate-700/50 hover:border-purple-500/50 hover:bg-purple-500/10 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 group/btn">
+                      class="w-10 h-10 rounded-full bg-slate-200/50 dark:bg-slate-800/50 border border-slate-300/50 dark:border-slate-700/50 hover:border-purple-500/50 hover:bg-indigo-500/10 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 group/btn">
                       <svg class="w-5 h-5 group-hover/btn:scale-110 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -166,7 +150,7 @@
           <button @click="previousPage" :disabled="currentPage === 1"
             class="group relative p-4 rounded-2xl bg-slate-100/50 dark:bg-slate-800/50 backdrop-blur-xl border border-slate-300/50 dark:border-slate-700/50 hover:border-purple-500/50 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300 hover:scale-105 disabled:hover:scale-100">
             <svg
-              class="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"
+              class="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
               fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
@@ -178,7 +162,7 @@
               'relative w-14 h-14 rounded-2xl font-bold transition-all duration-300 text-sm overflow-hidden',
               currentPage === page
                 ? 'bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-lg shadow-purple-500/50 scale-110'
-                : 'bg-slate-100/50 dark:bg-slate-800/50 backdrop-blur-xl border border-slate-300/50 dark:border-slate-700/50 text-slate-700 dark:text-slate-400 hover:border-purple-500/50 hover:text-purple-600 dark:hover:text-purple-400 hover:scale-105'
+                : 'bg-slate-100/50 dark:bg-slate-800/50 backdrop-blur-xl border border-slate-300/50 dark:border-slate-700/50 text-slate-700 dark:text-slate-400 hover:border-purple-500/50 hover:text-indigo-600 dark:hover:text-indigo-400 hover:scale-105'
             ]">
               <span class="relative z-10">{{ page }}</span>
               <div v-if="currentPage === page"
@@ -190,7 +174,7 @@
           <button @click="nextPage" :disabled="currentPage === totalPages"
             class="group relative p-4 rounded-2xl bg-slate-100/50 dark:bg-slate-800/50 backdrop-blur-xl border border-slate-300/50 dark:border-slate-700/50 hover:border-purple-500/50 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300 hover:scale-105 disabled:hover:scale-100">
             <svg
-              class="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"
+              class="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
               fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
@@ -201,12 +185,12 @@
         <div
           class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-slate-100/30 dark:bg-slate-800/30 backdrop-blur-xl border border-slate-300/50 dark:border-slate-700/50">
           <div class="flex items-center gap-2">
-            <div class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></div>
+            <div class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></div>
             <span class="text-sm text-slate-600 dark:text-slate-400">
               Showing
-              <span class="font-bold text-purple-600 dark:text-purple-400 mx-1">{{ startIndex + 1 }}</span>
+              <span class="font-bold text-indigo-600 dark:text-indigo-400 mx-1">{{ startIndex + 1 }}</span>
               to
-              <span class="font-bold text-purple-600 dark:text-purple-400 mx-1">{{ Math.min(endIndex, projects.length)
+              <span class="font-bold text-indigo-600 dark:text-indigo-400 mx-1">{{ Math.min(endIndex, projects.length)
                 }}</span>
               of
               <span class="font-bold text-slate-900 dark:text-white mx-1">{{ projects.length }}</span>
@@ -221,6 +205,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { Icon } from '@iconify/vue'
 
 const currentPage = ref(1)
 const itemsPerPage = ref(6)

@@ -1,29 +1,44 @@
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 import { Icon } from '@iconify/vue'
+import emailjs from '@emailjs/browser'
 
-const form = reactive({
-  fullName: '',
-  email: '',
-  subject: '',
-  message: ''
-})
-
-const subjects = [
-  'Logo Design',
-  'Web Design',
-  'App Development',
-  'Branding',
-  'Other'
-]
-
+const formRef = ref(null)
 const isSubmitting = ref(false)
+const submitStatus = ref('') // 'success' | 'error' | ''
 
-const handleSubmit = async () => {
+const sendEmail = () => {
   isSubmitting.value = true
-  await new Promise(resolve => setTimeout(resolve, 1500))
-  console.log('Form submitted:', form)
-  isSubmitting.value = false
+  submitStatus.value = ''
+
+  emailjs.sendForm(
+    'service_315rfeo',
+    'template_hh12u02',
+    formRef.value,
+    '4m1F6EabZqZnRTssE'
+  )
+  .then((result) => {
+    console.log('SUCCESS!', result.text)
+    submitStatus.value = 'success'
+    clearForm()
+  })
+  .catch((error) => {
+    console.log('FAILED...', error.text)
+    submitStatus.value = 'error'
+  })
+  .finally(() => {
+    isSubmitting.value = false
+    // Clear status after 5 seconds
+    setTimeout(() => {
+      submitStatus.value = ''
+    }, 5000)
+  })
+}
+
+const clearForm = () => {
+  if (formRef.value) {
+    formRef.value.reset()
+  }
 }
 
 const contactInfo = [
@@ -57,7 +72,7 @@ const socialLinks = [
 
 <template>
   <section
-    class="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-violet-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-violet-950/20 overflow-hidden">
+    class="relative bg-gradient-to-br from-slate-50 via-white to-violet-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-violet-950/20 overflow-hidden">
     <!-- Animated Background -->
     <div class="absolute inset-0 pointer-events-none">
       <!-- Gradient Orbs -->
@@ -94,7 +109,7 @@ const socialLinks = [
       </div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
       <!-- Header Section -->
       <div class="text-center mb-12 sm:mb-16 lg:mb-20">
         <div
@@ -175,7 +190,7 @@ const socialLinks = [
             <!-- Form Card -->
             <div
               class="relative bg-white/90 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-slate-200 dark:border-white/[0.08] p-6 sm:p-8 lg:p-10 shadow-xl shadow-violet-500/5 dark:shadow-none">
-              <form @submit.prevent="handleSubmit" class="space-y-6">
+              <form ref="formRef" @submit.prevent="sendEmail" class="space-y-6">
                 <!-- Name & Email Row -->
                 <div class="grid sm:grid-cols-2 gap-6">
                   <!-- Full Name -->
@@ -187,7 +202,7 @@ const socialLinks = [
                     <div class="relative">
                       <Icon icon="ph:user-duotone"
                         class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 dark:text-slate-500 group-focus-within:text-violet-500 dark:group-focus-within:text-violet-400 transition-colors" />
-                      <input v-model="form.fullName" type="text" id="fullName" placeholder="John Doe"
+                      <input type="text" id="fullName" name="user_name" placeholder="John Doe"
                         class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] rounded-xl text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-violet-400 dark:focus:border-violet-500/50 focus:bg-white dark:focus:bg-violet-500/5 focus:ring-2 focus:ring-violet-500/20 transition-all duration-300"
                         required />
                     </div>
@@ -202,35 +217,14 @@ const socialLinks = [
                     <div class="relative">
                       <Icon icon="ph:envelope-duotone"
                         class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 dark:text-slate-500 group-focus-within:text-violet-500 dark:group-focus-within:text-violet-400 transition-colors" />
-                      <input v-model="form.email" type="email" id="email" placeholder="john@example.com"
+                      <input type="email" id="email" name="user_email" placeholder="john@example.com"
                         class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] rounded-xl text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-violet-400 dark:focus:border-violet-500/50 focus:bg-white dark:focus:bg-violet-500/5 focus:ring-2 focus:ring-violet-500/20 transition-all duration-300"
                         required />
                     </div>
                   </div>
                 </div>
 
-                <!-- Subject -->
-                <div class="group">
-                  <label for="subject"
-                    class="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2 group-focus-within:text-violet-600 dark:group-focus-within:text-violet-400 transition-colors">
-                    What can we help you with?
-                  </label>
-                  <div class="relative">
-                    <Icon icon="ph:briefcase-duotone"
-                      class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 dark:text-slate-500 group-focus-within:text-violet-500 dark:group-focus-within:text-violet-400 transition-colors z-10" />
-                    <select v-model="form.subject" id="subject"
-                      class="w-full pl-12 pr-10 py-3.5 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] rounded-xl text-slate-800 dark:text-white appearance-none cursor-pointer focus:outline-none focus:border-violet-400 dark:focus:border-violet-500/50 focus:bg-white dark:focus:bg-violet-500/5 focus:ring-2 focus:ring-violet-500/20 transition-all duration-300"
-                      :class="{ 'text-slate-400 dark:text-slate-600': !form.subject }" required>
-                      <option value="" disabled class="bg-white dark:bg-slate-900">Select a service</option>
-                      <option v-for="subject in subjects" :key="subject" :value="subject"
-                        class="bg-white dark:bg-slate-900 text-slate-800 dark:text-white">
-                        {{ subject }}
-                      </option>
-                    </select>
-                    <Icon icon="ph:caret-down"
-                      class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 dark:text-slate-500 pointer-events-none" />
-                  </div>
-                </div>
+            
 
                 <!-- Message -->
                 <div class="group">
@@ -241,11 +235,24 @@ const socialLinks = [
                   <div class="relative">
                     <Icon icon="ph:chat-text-duotone"
                       class="absolute left-4 top-4 w-5 h-5 text-slate-400 dark:text-slate-500 group-focus-within:text-violet-500 dark:group-focus-within:text-violet-400 transition-colors" />
-                    <textarea v-model="form.message" id="message" rows="5"
+                    <textarea id="message" name="message" rows="5"
                       placeholder="Tell us about your project, goals, and timeline..."
                       class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] rounded-xl text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-violet-400 dark:focus:border-violet-500/50 focus:bg-white dark:focus:bg-violet-500/5 focus:ring-2 focus:ring-violet-500/20 transition-all duration-300 resize-none"
                       required></textarea>
                   </div>
+                </div>
+
+                <!-- Status Messages -->
+                <div v-if="submitStatus === 'success'"
+                  class="flex items-center gap-3 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 text-emerald-700 dark:text-emerald-300">
+                  <Icon icon="ph:check-circle-duotone" class="w-5 h-5 flex-shrink-0" />
+                  <span>Message sent successfully!</span>
+                </div>
+
+                <div v-if="submitStatus === 'error'"
+                  class="flex items-center gap-3 p-4 rounded-xl bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-700 dark:text-red-300">
+                  <Icon icon="ph:x-circle-duotone" class="w-5 h-5 flex-shrink-0" />
+                  <span>Failed to send message. Please try again.</span>
                 </div>
 
                 <!-- Submit Button -->
@@ -263,13 +270,6 @@ const socialLinks = [
                   </button>
                 </div>
 
-                <!-- Privacy Note -->
-                <p class="text-slate-500 dark:text-slate-500 text-sm">
-                  By submitting, you agree to our
-                  <a href="#"
-                    class="text-violet-600 dark:text-violet-400 hover:text-violet-500 dark:hover:text-violet-300 underline underline-offset-2">Privacy
-                    Policy</a>.
-                </p>
               </form>
             </div>
           </div>

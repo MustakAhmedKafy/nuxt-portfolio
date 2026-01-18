@@ -208,7 +208,8 @@
   <ProfessionalBackground />
   <Project />
   <Gallery />
-  <Contact/>
+  <Contact />
+  <Footer />
 </template>
 
 <script setup>
